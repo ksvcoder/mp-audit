@@ -63,7 +63,7 @@ def get_google_sheets_client():
 
 @st.cache_data
 def load_questions():
-    """Загружает вопросы из Google Sheet"""
+    """Загружает вопросы из Google Sheet (только Приоритет 1)"""
     try:
         client = get_google_sheets_client()
         if not client:
@@ -75,6 +75,10 @@ def load_questions():
         data = worksheet.get_all_values()
 
         df = pd.DataFrame(data[1:], columns=data[0])
+
+        # Фильтруем только Приоритет 1
+        df = df[df['Приоритет'] == 'Приоритет 1 (Фундамент и выживание)']
+
         return df
     except Exception as e:
         st.error(f"❌ Ошибка при загрузке данных: {e}")
@@ -255,11 +259,10 @@ with st.sidebar:
 
     st.markdown("### 📋 Информация")
     st.markdown("""
-    Эта форма позволяет:
-    - ✅ Заполнить IT аудит чек-лист
-    - 📝 Указать ваши ответы (Да/Нет/Частично)
-    - 📎 Приложить факты/доказательства
-    - 💬 Оставить комментарии
+    **Приоритет 1:** Фундамент и выживание
 
-    **Все ответы сохраняются в Google Sheet**
+    Форма для сбора ответов:
+    - 🔘 Варианты: Да / Нет / Частично
+    - 📎 При Да/Частично: приложить факты
+    - 💬 Опционально: комментарии
     """)
