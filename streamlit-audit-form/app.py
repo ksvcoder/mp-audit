@@ -15,8 +15,8 @@ st.title("📋 IT Audit Checklist")
 # Инициализация сессии
 if 'current_question_idx' not in st.session_state:
     st.session_state.current_question_idx = 0
-if 'answers' not in st.session_state:
-    st.session_state.answers = []
+if 'user_answers' not in st.session_state:
+    st.session_state.user_answers = {}  # словарь {индекс: {answer, fact, comment}}
 if 'user_name' not in st.session_state:
     st.session_state.user_name = ""
 
@@ -173,10 +173,21 @@ if st.session_state.user_name:
 
         st.divider()
 
+        # Восстанавливаем сохранённые ответы для этого вопроса
+        saved_answer = st.session_state.user_answers.get(current_idx, {})
+        default_answer = saved_answer.get('answer')
+        default_fact = saved_answer.get('fact', '')
+        default_comment = saved_answer.get('comment', '')
+
         # Форма ответа
         col1, col2, col3 = st.columns(3)
         with col1:
-            answer = st.radio("Ваш ответ:", ["Да", "Нет", "Частично"], key=f"answer_{current_idx}")
+            answer = st.radio(
+                "Ваш ответ:",
+                ["Да", "Нет", "Частично"],
+                index=["Да", "Нет", "Частично"].index(default_answer) if default_answer else 1,
+                key=f"answer_{current_idx}"
+            )
 
         # Условное отображение полей
         fact = ""
@@ -186,6 +197,7 @@ if st.session_state.user_name:
             st.info("📎 Приложите факт/доказательство (ссылка, файл или описание)")
             fact = st.text_area(
                 "Факт/ссылка/описание документа:",
+                value=default_fact,
                 key=f"fact_{current_idx}",
                 height=100
             )
@@ -193,6 +205,7 @@ if st.session_state.user_name:
         st.info("💬 Дополнительный комментарий (опционально)")
         comment = st.text_area(
             "Комментарий:",
+            value=default_comment,
             key=f"comment_{current_idx}",
             height=80
         )
@@ -204,12 +217,18 @@ if st.session_state.user_name:
 
         with col1:
             if st.button("⬅️ Назад", disabled=(current_idx == 0)):
+                # Сохраняем текущий ответ перед переходом
+                st.session_state.user_answers[current_idx] = {
+                    'answer': answer,
+                    'fact': fact,
+                    'comment': comment
+                }
                 st.session_state.current_question_idx -= 1
                 st.rerun()
 
         with col2:
             if st.button("✅ Сохранить и далее"):
-                # Сохраняем ответ
+                # Сохраняем текущий ответ в Google Sheets
                 client = get_google_sheets_client()
                 if client:
                     success = save_answer(
@@ -224,6 +243,12 @@ if st.session_state.user_name:
                     )
 
                     if success:
+                        # Сохраняем в session_state для истории
+                        st.session_state.user_answers[current_idx] = {
+                            'answer': answer,
+                            'fact': fact,
+                            'comment': comment
+                        }
                         st.success("✅ Ответ сохранён!")
 
                         # Переходим к следующему вопросу
@@ -236,6 +261,12 @@ if st.session_state.user_name:
 
         with col3:
             if st.button("⏭️ Пропустить"):
+                # Сохраняем текущий ответ (даже если пропускаем)
+                st.session_state.user_answers[current_idx] = {
+                    'answer': answer,
+                    'fact': fact,
+                    'comment': comment
+                }
                 if current_idx + 1 < len(df):
                     st.session_state.current_question_idx += 1
                     st.rerun()
