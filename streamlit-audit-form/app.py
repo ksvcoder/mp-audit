@@ -25,23 +25,40 @@ if 'user_name' not in st.session_state:
 @st.cache_resource
 def get_google_sheets_client():
     """Подключение к Google Sheets"""
-    # Получить credentials из Streamlit Secrets (для Streamlit Cloud)
-    secrets = st.secrets.get("gcp_service_account", {})
+    try:
+        # Для Streamlit Cloud - читаем из Secrets
+        if hasattr(st, 'secrets') and len(st.secrets) > 0:
+            # Преобразуем Secrets в словарь
+            secrets_dict = dict(st.secrets)
 
-    if not secrets:
-        # Fallback для локального развертывания - читаем файл
-        try:
-            with open("credentials.json") as f:
-                secrets = json.load(f)
-        except FileNotFoundError:
-            st.error("❌ Файл credentials.json не найден!")
-            return None
+            # Если Secrets содержит nested dict gcp_service_account
+            if "gcp_service_account" in secrets_dict:
+                secrets = dict(st.secrets["gcp_service_account"])
+            else:
+                # Иначе берём весь Secrets как credentials
+                secrets = secrets_dict
 
-    creds = Credentials.from_service_account_info(
-        secrets,
-        scopes=['https://www.googleapis.com/auth/spreadsheets']
-    )
-    return gspread.authorize(creds)
+            creds = Credentials.from_service_account_info(
+                secrets,
+                scopes=['https://www.googleapis.com/auth/spreadsheets']
+            )
+            return gspread.authorize(creds)
+    except Exception as e:
+        st.warning(f"⚠️ Не удалось использовать Streamlit Secrets: {e}")
+
+    # Fallback для локального развертывания - читаем файл
+    try:
+        with open("credentials.json") as f:
+            secrets = json.load(f)
+        creds = Credentials.from_service_account_info(
+            secrets,
+            scopes=['https://www.googleapis.com/auth/spreadsheets']
+        )
+        return gspread.authorize(creds)
+    except FileNotFoundError:
+        st.error("❌ Файл credentials.json не найден и Secrets не настроены!")
+        st.info("📝 Для Streamlit Cloud: добавьте credentials в Settings → Secrets")
+        return None
 
 
 @st.cache_data
