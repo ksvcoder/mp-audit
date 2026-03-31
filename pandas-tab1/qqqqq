@@ -1,0 +1,26 @@
+{
+  type  = "service_account"
+  project_id  = "gen-lang-client-0748455401"
+  private_key_id  = "1bb8d1218883eb0bfcdddcb531a6123baf16da55"
+  private_key  = "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDAFKSiaZhtjwAn\n4rXKdHzosktmaxZgeR0qyDxKMJxyfrgwOK0G08NdX7lHfemmz5NloiO+ky74sNmD\nach2Jfqmop3Murp02XagCPxmiWwihQnpPL4G3aa2HNJJxdxzGeSt4fOXTeu4jAUg\n/TzqBZTWOrw97ZhcWzyVTejITU+WIIqpf4HZdlyqTeiIpVzRYgEHODiP8nUK0GzD\n52qOLc1awdSCINFMzjuSSQuVO8yNMvRKYxkmWdkJEeNiknH4PhUS07UCl6V85EI4\nI8/UySBGU9GZ8SsXpgOs0KaZx0aRRbs2su1bt2LwpFHtqasrxHjBLi9s/0rPOCDH\nwZYl+BzfAgMBAAECggEAB00BkPbIh2mHDP0OAdr5oHKecQ8i85nG5QhlWkCMwcFV\nSOfuk7La2yK3TSNZDTEYniVSjHzVrTgznE4aA3ugElNeAhka2zQk0SJmTZNtm8ZI\nwSfA5UvpeUSRLaKqpWlXitBqzNZ2XjZcP4vAk/iQVrA21XfBcck5/UbP0UU3ADK9\nljCWzqMkCogyMz4teQENRqenhiaTZd3qdOQcAkpSjfoC6sOQBgXa/wSlCDHjSyXe\n0cQgewr75j2Hzw/7C3OH2SZM2YqbnYKXPEzTxBHWuT8x+BbgQvxughtJCpdegLhL\nUmn/q+9dx8npscSJ4NpZFAwiuhx54y5xgiCGEEZsAQKBgQDiQL8HAGcSAwcHco9M\n4goBuePZNih9QmG9coBUUUnbtkW5941437XGvWjfPowmCUyjG4CJsR2gWxcJ1KpP\nXADL7dqq8zqEz9Y2Vv54ZGZbuX55PYJDw4+IxVZoMDSo7ZuKkoXK7xdzRHy0DSeS\nLrgKhBXwgflqj5pQ7VZGYDw63wKBgQDZVbirb1CVZpw0sieqRtmPuVkU3M92Cq/O\nyRJP2ck9Wm6m2G0IuCFK6hVM1JZr7sN7QOARjBruC6lzcVu9iwSGojvxTwi8xX4x\n0BRgsusqLksY7DltWsyj9PYrT1L90qbLVxDdKgah9mLdhkCRFhnmiqn/LOCsYoY0\n65QXeaJeAQKBgHxbxiPdDsoRq+1mBGnn3EQynpAnen3O3NY6d1rhC02elBixfqsv\nm0RPm7MJOBM4DU2hsjb8iSI4ryMSJ0JTeYSdihFoe4PAkSdxDZGy7agA/wk4y77f\nYKd2gBXoWSl44IN8Idn3LNaIkFqO2G87CqGNFFoLtsHhiJpuuXsZLkHVAoGBANdc\nmGhZH/NMANI/EAsttf0z39BKltIT+O7iVOEHoODJMgjnQfR38ZW4rG674msF6HPE\nb8UznqPwrnOVCyGiFlQLg3a1qKTW1xwpY2gHI/1ibkw+GRIB/fMilKWKL2USTvIE\nTtO6B2SLMKDvnh+nVPccxSP1ppVr9C2Qm+k/QOQBAoGAD95Cq5d9Jcx+rfuVfFSm\n8ejRShfPVNW8VKvlNb8adrN/07BluMf1U6L531DAb2kWBwd+6mckQ4gX1AtW+BLV\nHfErusy2AA9HsAyHEQHigngPNlQ1t+khzp8q8cFsqQhP0SUKnSBGrU92UBVcsfwV\n03PiGROXPl8uMFzq6z5H2yM=\n-----END PRIVATE KEY-----\n"
+  client_email  = "my-sheets-processor@gen-lang-client-0748455401.iam.gserviceaccount.com"
+  client_id  = "104682599929390331317"
+  auth_uri  = "https://accounts.google.com/o/oauth2/auth"
+  token_uri  = "https://oauth2.googleapis.com/token"
+  auth_provider_x509_cert_url  = "https://www.googleapis.com/oauth2/v1/certs"
+  client_x509_cert_url  = "https://www.googleapis.com/robot/v1/metadata/x509/my-sheets-processor%40gen-lang-client-0748455401.iam.gserviceaccount.com"
+  universe_domain  = "googleapis.com"
+}
+
+ [gcp_service_account]                                     
+  type  = "service_account"
+  project_id  = "gen-lang-client-0748455401"
+  private_key_id  = "1bb8d1218883eb0bfcdddcb531a6123baf16da55"
+  private_key  = "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDAFKSiaZhtjwAn\n4rXKdHzosktmaxZgeR0qyDxKMJxyfrgwOK0G08NdX7lHfemmz5NloiO+ky74sNmD\nach2Jfqmop3Murp02XagCPxmiWwihQnpPL4G3aa2HNJJxdxzGeSt4fOXTeu4jAUg\n/TzqBZTWOrw97ZhcWzyVTejITU+WIIqpf4HZdlyqTeiIpVzRYgEHODiP8nUK0GzD\n52qOLc1awdSCINFMzjuSSQuVO8yNMvRKYxkmWdkJEeNiknH4PhUS07UCl6V85EI4\nI8/UySBGU9GZ8SsXpgOs0KaZx0aRRbs2su1bt2LwpFHtqasrxHjBLi9s/0rPOCDH\nwZYl+BzfAgMBAAECggEAB00BkPbIh2mHDP0OAdr5oHKecQ8i85nG5QhlWkCMwcFV\nSOfuk7La2yK3TSNZDTEYniVSjHzVrTgznE4aA3ugElNeAhka2zQk0SJmTZNtm8ZI\nwSfA5UvpeUSRLaKqpWlXitBqzNZ2XjZcP4vAk/iQVrA21XfBcck5/UbP0UU3ADK9\nljCWzqMkCogyMz4teQENRqenhiaTZd3qdOQcAkpSjfoC6sOQBgXa/wSlCDHjSyXe\n0cQgewr75j2Hzw/7C3OH2SZM2YqbnYKXPEzTxBHWuT8x+BbgQvxughtJCpdegLhL\nUmn/q+9dx8npscSJ4NpZFAwiuhx54y5xgiCGEEZsAQKBgQDiQL8HAGcSAwcHco9M\n4goBuePZNih9QmG9coBUUUnbtkW5941437XGvWjfPowmCUyjG4CJsR2gWxcJ1KpP\nXADL7dqq8zqEz9Y2Vv54ZGZbuX55PYJDw4+IxVZoMDSo7ZuKkoXK7xdzRHy0DSeS\nLrgKhBXwgflqj5pQ7VZGYDw63wKBgQDZVbirb1CVZpw0sieqRtmPuVkU3M92Cq/O\nyRJP2ck9Wm6m2G0IuCFK6hVM1JZr7sN7QOARjBruC6lzcVu9iwSGojvxTwi8xX4x\n0BRgsusqLksY7DltWsyj9PYrT1L90qbLVxDdKgah9mLdhkCRFhnmiqn/LOCsYoY0\n65QXeaJeAQKBgHxbxiPdDsoRq+1mBGnn3EQynpAnen3O3NY6d1rhC02elBixfqsv\nm0RPm7MJOBM4DU2hsjb8iSI4ryMSJ0JTeYSdihFoe4PAkSdxDZGy7agA/wk4y77f\nYKd2gBXoWSl44IN8Idn3LNaIkFqO2G87CqGNFFoLtsHhiJpuuXsZLkHVAoGBANdc\nmGhZH/NMANI/EAsttf0z39BKltIT+O7iVOEHoODJMgjnQfR38ZW4rG674msF6HPE\nb8UznqPwrnOVCyGiFlQLg3a1qKTW1xwpY2gHI/1ibkw+GRIB/fMilKWKL2USTvIE\nTtO6B2SLMKDvnh+nVPccxSP1ppVr9C2Qm+k/QOQBAoGAD95Cq5d9Jcx+rfuVfFSm\n8ejRShfPVNW8VKvlNb8adrN/07BluMf1U6L531DAb2kWBwd+6mckQ4gX1AtW+BLV\nHfErusy2AA9HsAyHEQHigngPNlQ1t+khzp8q8cFsqQhP0SUKnSBGrU92UBVcsfwV\n03PiGROXPl8uMFzq6z5H2yM=\n-----END PRIVATE KEY-----\n"
+  client_email  = "my-sheets-processor@gen-lang-client-0748455401.iam.gserviceaccount.com"
+  client_id  = "104682599929390331317"
+  auth_uri  = "https://accounts.google.com/o/oauth2/auth"
+  token_uri  = "https://oauth2.googleapis.com/token"
+  auth_provider_x509_cert_url  = "https://www.googleapis.com/oauth2/v1/certs"
+  client_x509_cert_url  = "https://www.googleapis.com/robot/v1/metadata/x509/my-sheets-processor%40gen-lang-client-0748455401.iam.gserviceaccount.com"
+  universe_domain  = "googleapis.com"
