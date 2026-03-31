@@ -131,7 +131,7 @@ if df is None or df.empty:
 # ---- ВВОДИМ ИМЯ ПОЛЬЗОВАТЕЛЯ ----
 if not st.session_state.user_name:
     st.info("👤 Сначала укажите ваше имя")
-    name = st.text_input("Ваше ФИ:", key="name_input")
+    name = st.text_input("Ваше имя фамилия:", key="name_input")
     if name:
         st.session_state.user_name = name
         st.rerun()
