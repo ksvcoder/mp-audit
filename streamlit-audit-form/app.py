@@ -139,6 +139,8 @@ else:
     st.success(f"✅ Вы вошли как: **{st.session_state.user_name}**")
     if st.button("🔄 Переключить пользователя"):
         st.session_state.user_name = ""
+        st.session_state.user_answers = {}  # Очищаем ответы при смене пользователя
+        st.session_state.current_question_idx = 0
         st.rerun()
 
 st.divider()
